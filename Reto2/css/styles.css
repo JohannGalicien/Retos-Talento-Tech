@@ -1,0 +1,93 @@
+
+/*Padding: distance between object to border
+  Margin: distance between border to outside */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+                        /* #8d8d8d */
+    background-color: rgb(141, 141, 141);
+        /* opacidad o transparencia: rgba(r, g, b, [0-1])*/
+
+    line-height: 1.6;
+    margin: 0px;
+
+    
+}
+
+h1 {
+    background-color: rgb(62, 62, 62);
+    box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.8);
+    color: crimson;
+    margin:0;
+    padding: 25px;
+    
+}
+
+h2 {
+    padding: 15px;
+}
+
+p {
+    padding: 25px;
+    font-size: 1.2em;
+}
+
+img {
+    
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    margin: 10px auto;
+}
+
+
+head {
+    background-color: rgb(62, 62, 62);
+    box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.5);
+    margin: 0;
+    
+}
+
+main {
+    padding: 20px;
+    
+    margin: 10px;
+    margin-bottom: 100px;
+}
+
+section {
+    background-color: lightgray;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.8);
+}
+
+ul {
+    list-style-type: disc;
+}
+
+footer {
+    background-color: rgb(62, 62, 62);
+    padding: 5px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+}
+
+li {
+    font-size: 1.2em;
+} 
+
+.email-link {
+    color: white;
+}
+
+.link {
+    color:white;
+}

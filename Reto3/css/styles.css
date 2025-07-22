@@ -1,0 +1,115 @@
+
+/*Padding: distance between object to border
+  Margin: distance between border to outside */
+
+  body {
+      font-family: Arial, Helvetica, sans-serif;
+      
+      /* #8d8d8d */
+      background-color: rgb(141, 141, 141);
+      /* opacidad o transparencia: rgba(r, g, b, [0-1])*/
+      
+      line-height: 1.6;
+      margin: 0px;
+      
+      
+    }
+    
+    header {
+        background-color: rgb(62, 62, 62);
+        box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.5);
+        margin: 0;
+        
+    }
+    
+    h1 {
+        background-color: rgb(62, 62, 62);
+        box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.8);
+        color: crimson;
+        margin:0;
+        padding: 15px;
+        
+        text-shadow: 3px 3px 0px black;
+        
+        /* -webkit-text-stroke: 1.5px black; */ /* agregar borde*/
+        
+        
+    
+}
+
+h2 {
+    padding: 0px;
+}
+
+p {
+    padding: 10px;
+    margin: 5px;
+    font-size: 1.2em;
+}
+
+main {
+    padding: 20px;
+    
+    margin: 10px;
+    margin-bottom: 100px;
+}
+
+section {
+    background-color: lightgray;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.8);
+}
+
+ul {
+    list-style-type: disc;
+}
+
+footer {
+    background-color: rgb(62, 62, 62);
+    padding: 5px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+}
+
+
+
+
+.link {
+    color:white;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+
+
+}
+
+.flex-item {
+    /* Hace que un elemento ocupe el espacio disponible*/
+    flex: 1;
+    
+    /*Ancho minimo*/
+    min-width: 400px;
+    background-color: rgb(186, 186, 186);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 black;
+    
+}
+
+img {
+    max-width: 350px;
+    height: auto;
+    display: block;
+    margin: 5px auto;
+}
