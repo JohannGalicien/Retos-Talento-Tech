@@ -83,7 +83,7 @@ section {
     background-color: lightgray;
     padding: 20px;
     border-radius: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     margin: 5px;
     margin-top: 10px;
 
@@ -226,9 +226,10 @@ iframe {
         grid-template-columns:1fr;
         grid-template-rows: repeat(6, auto);
         grid-template-areas: "item1" "item2" "item3" "item4" "item5" "item6";
+        }
     }
 
-    }
+    
 
 header img {
     grid-area: icon;
@@ -238,7 +239,3 @@ header img {
 
 }
 
-.link3 {
-    margin-left: 15px;
-    color: black
-}
