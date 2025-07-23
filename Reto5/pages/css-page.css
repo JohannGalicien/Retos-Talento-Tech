@@ -1,0 +1,233 @@
+
+/*Padding: distance between object to border
+  Margin: distance between border to outside */
+
+  body {
+    
+    font-family: Arial, Helvetica, sans-serif;
+      
+      /* #8d8d8d */
+      background-color: rgb(141, 141, 141);
+      /* opacidad o transparencia: rgba(r, g, b, [0-1])*/
+      
+      line-height: 1.6;
+      margin: 0px;
+      
+      
+    }
+    
+    header {
+        background-color: rgb(62, 62, 62);
+        box-shadow: 0 5px 0 0 rgba(0, 0, 0, 1);
+        margin: 0;
+        
+        /* Con esto no hago sticky el header*/
+        position: relative;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: auto;
+
+        /* Con esto  hago sticky el header
+        position: sticky;
+        z-index
+        top: 0;
+        left: 0;
+        width: 100%; */
+
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-areas: "titlehead icon";
+
+    }
+    
+    aside {
+        background-color: gray;
+        margin-top: 5px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        
+    }
+
+    h1 {
+        background-color: rgb(62, 62, 62);
+        box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.8);
+        color: rgb(255, 255, 255);
+        margin:0;
+        padding: 15px;
+
+
+        text-shadow: 3px 3px 0px black;
+        grid-area: titlehead;
+        /* -webkit-text-stroke: 1.5px black; */ /* agregar borde*/
+        
+        
+    
+}
+
+h2 {
+    
+    margin: 5px;
+    padding: 0px;
+    font-size: 2em;
+}
+
+p {
+    padding: 10px;
+    margin: 5px;
+    font-size: 1.2em;
+}
+
+section {
+    background-color: lightgray;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin: 5px;
+    margin-top: 10px;
+
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.8);
+}
+
+ul {
+    
+    position: relative;
+    list-style-type: disc;
+    padding-bottom: 20px;
+    margin-top: 10px;
+
+}
+
+aside h2 {
+    position: relative;
+}
+
+footer {
+    background-color: rgb(62, 62, 62);
+    padding: 5px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+}
+
+
+
+
+.link {
+    color:white;
+}
+
+.link2 {
+    color: black;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 white;
+    font-size: 1.5em;
+}
+
+img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: auto auto;
+    grid-area: multimedia2;
+    border-radius: 10px;
+}
+
+iframe {
+    width: 100%;
+    height: 80%;
+    margin: auto auto;
+    display: block;
+    grid-area: multimedia1;
+}
+
+.layout_grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 2fr auto;
+    height: 100vh;
+    grid-template-areas: 
+    
+        "header header"
+        "sidebar item"
+        "footer footer";
+}
+
+/* tambien pudo habe sido .sidebar h2 { } */
+.sidebar h2 {
+    text-shadow: 2px 2px 0px white;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    position: relative;
+}
+
+.portfolio {
+    padding: 10px;
+    grid-area: item;
+    
+
+    
+
+}
+
+.item:nth-child(1) { grid-area: item1;}
+.item:nth-child(2) { grid-area: item2;}
+.item:nth-child(3) { grid-area: item3;}
+.item:nth-child(4) { grid-area: item4;}
+.item:nth-child(5) { grid-area: item5;}
+.item:nth-child(6) { grid-area: item6;}
+
+.sidebar ul li a:hover {
+    color: rgb(62, 62, 62);
+}
+
+.sidebar ul li a {
+    transition: 0.2s;
+}
+/* gap: espacio entre columnas y filas entre si*/
+
+@media (max-width: 800px) {
+    .sidebar {
+    grid-area: sidebar;
+    position: relative;
+    width: 100%;
+    }
+    
+    .layout_grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto  1fr auto;
+        grid-template-areas: 
+            "header"
+            "sidebar"
+            "portfolio"
+            "footer";
+         
+            
+
+   
+        
+    }
+
+     .portfolio {
+        grid-area: portfolio;
+        grid-template-columns:1fr;
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas: "item1";
+    }
+
+    
+    
+    }
+
+header img {
+    grid-area: icon;
+    margin-right: 5%;
+    margin-bottom: auto;
+    
+
+}
