@@ -159,15 +159,18 @@ iframe {
 /* tambien pudo habe sido .sidebar h2 { } */
 .sidebar h2 {
     text-shadow: 2px 2px 0px white;
+
 }
 
 .sidebar {
     grid-area: sidebar;
     position: relative;
+    box-sizing: border-box;
 }
 
 .portfolio {
     padding: 10px;
+    padding-bottom: 50px;
     grid-area: item;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
