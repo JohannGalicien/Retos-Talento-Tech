@@ -1,0 +1,35 @@
+body {
+    padding: 50px;
+    background-color: azure;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+
+}
+
+input {
+    margin: auto    ;
+    font-size: 2em;
+    max-width: 20%  ;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    margin: auto;
+    border-color: darkblue;
+    background-color: blue;
+    color: azure;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: rgba(0, 0, 255, 0.481);
+}
+
+#result {
+    font-size: 2em;
+}

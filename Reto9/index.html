@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <title>Visualización de energias renovables</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Visualización de energias renovables</h1>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#graficobarraspaises">Paises</a></li>
+            <li><a href="#graficobarrasregiones">Regiones</a></li>
+            <li><a href="#graficolineascomparativas">Evolución</a></li>
+        </ul>
+
+    </nav>
+
+    <div class="maincontent">
+        <section class="grafico">
+            <h2>Top 20 Paises con Mayor Producción de Energía Renovable</h2>
+            <canvas id="graficobarraspaises"></canvas>
+        </section>
+        <section class="grafico">
+            <h2>Producción de Energía Renovable por Regiones</h2>
+            <canvas id="graficobarrasregiones"></canvas>
+        </section>
+        <section class="grafico">
+            <h2>Comparativa de Producción de Energía Renovable - Colombia VS Suramérica (1965 - 2021)</h2>
+            <canvas id="graficolineascomparativas"></canvas>
+        </section>
+    </div>
+
+    <footer class="footer">
+        Creado por Galicien - Bootcamp Talento Tech 2025
+    </footer>
+
+    <script src="js/scripts.js"></script>
+
+    <!-- supabase.com -->
+</body>
+</html>
