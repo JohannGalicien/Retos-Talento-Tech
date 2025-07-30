@@ -1,0 +1,59 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.header {
+    max-width: 100%;
+    
+    background-color: green;
+   
+    z-index: 10;
+    margin: 0;
+    padding-left: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+}
+
+.title {
+    color: white;
+    text-shadow: 5px 5px 5px black;
+    margin: 0;
+
+}
+
+.navbar {
+    background-color: lightgreen;
+    padding: 1%;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    gap: 4%;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+}
+
+.content {
+    width: 70%;
+    margin: auto;
+    background-color: lightgray;
+}
+
+h2 {
+    margin: 0;
+}
+.footer {
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: lightgreen;
+}
