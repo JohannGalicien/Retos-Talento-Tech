@@ -20,6 +20,10 @@ body {
     grid-template-columns: 5fr 1fr;
 }
 
+.icon {
+    max-width: 100%;
+}
+
 .title {
     color: white;
     text-shadow: 5px 5px 5px black;
