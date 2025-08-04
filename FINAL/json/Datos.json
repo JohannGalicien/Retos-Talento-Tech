@@ -1,0 +1,26 @@
+[
+  {
+    "vehiculo": "A320",
+    "capacidad": 220,
+    "velocidad": [250,500],
+    "consumo": 3125,
+    "co.2": 2.6,
+    "costo": 101
+  },
+  {
+    "vehiculo": "Hindenburg",
+    "capacidad": 200,
+    "velocidad": 122,
+    "consumo": 988.24,
+    "co.2": 2.67,
+    "costo": 57
+  },
+  {
+    "vehiculo": "Wolke 0",
+    "capacidad": 200,
+    "velocidad": 122,
+    "consumo": 77.8,
+    "co.2": 0,
+    "costo": 57
+  }
+]
