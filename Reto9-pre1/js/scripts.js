@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 const filteredData = data.filter(item => item.anno <= 2021)
+                console.log(filteredData)
                 const ctx = document.getElementById('graficolineascomparativas').getContext('2d');
                 new Chart(ctx, {
                     type: 'line',
@@ -112,4 +113,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 }); 
 
             });
+            
 });

@@ -43,12 +43,40 @@
     <main class="content">
         <h2>Sample H2</h2>
         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur itaque dolorum corporis voluptatum qui accusantium, esse temporibus eum, fugiat repudiandae obcaecati voluptatem illum? Voluptatem facilis qui non placeat ad cum.</p>
+        <fieldset class="simulador">
+            <legend>Ciudad de Origen</legend>
+            <select name="state1" id="state1">
+                <option value="">DEPARTAMENTO</option>
+            </select>
+            
+            <select name="city1" id="city1">
+                <option value="">CIUDAD</option>
+            </select>
+
+            
+        </fieldset>
+
+        <fieldset class="simulador">
+            <legend>Ciudad de Destino</legend>
+            <select name="state1" id="state2">
+                <option value="">DEPARTAMENTO</option>
+            </select>
+            
+            <select name="city1" id="city2">
+                <option value="">CIUDAD</option>
+            </select>
+
+            
+        </fieldset>
+
+        <button onclick="simular()">Simular</button>
+
+        <script src="../js/script_sim.js"></script>
     </main>
 
     <footer class="footer">
         <p class="textfooter">Sample Text</p>
     </footer>
-
 
 </body>
 </html>
