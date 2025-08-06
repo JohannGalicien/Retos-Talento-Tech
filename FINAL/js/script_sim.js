@@ -2,9 +2,10 @@
 
   fetch('../json/AeropuertosCoordenadas.json')
   .then(response => response.json())
-  .then(aeropuertos => {
-    console.log(aeropuertos);
+  .then(aeropuertoss => {
+    console.log(aeropuertoss);
   
+  const aeropuertos = aeropuertoss.sort((a,b) => a['Nombre Departamento'].localeCompare(b['Nombre Departamento']));
   // Obtener referencias a los elementos
   const departamentoSelect = document.getElementById('state1');
   const ciudadSelect = document.getElementById('city1');
@@ -29,7 +30,7 @@
 
     if (!seleccionado) return;
 
-    const municipios = aeropuertos
+    const municipios = aeropuertos.sort((a,b) => a['Nombre Municipio'].localeCompare(b['Nombre Municipio']))
       .filter(a => a['Nombre Departamento'] === seleccionado)
       .map(a => a['Nombre Municipio'].toLowerCase());
 
@@ -38,7 +39,7 @@
     unicos.forEach(ciudad => {
       const option = document.createElement('option');
       option.value = ciudad;
-      option.textContent = ciudad.charAt(0).toUpperCase() + ciudad.slice(1);
+      option.textContent = ciudad.toUpperCase();
       ciudadSelect.appendChild(option);
 
     ciudadSelect.addEventListener('change', () => {
@@ -53,9 +54,10 @@
 
 fetch('../json/AeropuertosCoordenadas.json')
   .then(response => response.json())
-  .then(aeropuertos => {
-    console.log(aeropuertos);
-  
+  .then(aeropuertoss => {
+    console.log(aeropuertoss);
+
+  const aeropuertos = aeropuertoss.sort((a,b) => a['Nombre Departamento'].localeCompare(b['Nombre Departamento']));
   // Obtener referencias a los elementos
   const departamentoSelect2 = document.getElementById('state2');
   const ciudadSelect2 = document.getElementById('city2');
@@ -80,7 +82,7 @@ fetch('../json/AeropuertosCoordenadas.json')
 
     if (!seleccionado) return;
 
-    const municipios = aeropuertos
+    const municipios = aeropuertos.sort((a,b) => a['Nombre Municipio'].localeCompare(b['Nombre Municipio']))
       .filter(a => a['Nombre Departamento'] === seleccionado)
       .map(a => a['Nombre Municipio'].toLowerCase());
 
@@ -89,7 +91,8 @@ fetch('../json/AeropuertosCoordenadas.json')
     unicos.forEach(ciudad => {
       const option = document.createElement('option');
       option.value = ciudad;
-      option.textContent = ciudad.charAt(0).toUpperCase() + ciudad.slice(1);
+      option.textContent = ciudad.toUpperCase();
+     // option.textContent = ciudad.charAt(0).toUpperCase() + ciudad.slice(1);
       ciudadSelect2.appendChild(option);
 
        ciudadSelect2.addEventListener('change', () => {
@@ -106,18 +109,25 @@ fetch('../json/AeropuertosCoordenadas.json')
 
 boton.addEventListener('click', function() {
   
+  
   fetch('../json/AeropuertosCoordenadas.json')
   .then(response => response.json())
   .then(aeropuertos => {
     console.log(aeropuertos);
     
     const city1 = document.getElementById('city1');
-    
     const city2 = document.getElementById('city2');
+
+    const informe = document.getElementById('result');
     
   
     console.log(`Desde ${city1.value}`);
     console.log(`Hasta ${city2.value}`);
+
+    if (city1.value === city2.value) {
+      informe.textContent = `¡Seleccione dos ciudades distintas!`;
+      return;
+    }
 
       const ciudadOrigen = aeropuertos.find(c => c.City === city1.value);
       const ciudadDestino = aeropuertos.find(c => c.City === city2.value);
@@ -150,9 +160,19 @@ boton.addEventListener('click', function() {
       const c = 2 * Math.asin(Math.sqrt(a));
       const distancia = R * c;
 
-      console.log(`Distancia: ${distancia}`);
+      console.log(`Distancia: ${distancia}, Aeropuertos: ${aeropuertoOrigen}, ${aeropuertoDestino}`);
+
+      const informeOrigen = document.getElementById('resultOrigin');
+      const informeDestino = document.getElementById('resultDestination');
+      
+
+      informeOrigen.innerHTML = `Origen:<br>${aeropuertoOrigen}`;
+      informeDestino.innerHTML = `Destino:<br>${aeropuertoDestino}`;
+      informe.textContent = `Distancia: ${Math.floor(distancia)}km`;
 
 
+      
  
-  })
+  });
+  
     }) 
