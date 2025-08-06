@@ -121,9 +121,11 @@ boton.addEventListener('click', function() {
 
       const ciudadOrigen = aeropuertos.find(c => c.City === city1.value);
       const ciudadDestino = aeropuertos.find(c => c.City === city2.value);
+      const aeropuertoOrigen = ciudadOrigen["Airport name"]
+      const aeropuertoDestino = ciudadDestino["Airport name"]
 
       console.log(ciudadOrigen)
-      console.log(ciudadDestino)
+      console.log(aeropuertoOrigen)
 
       const Latitud1 = parseFloat((ciudadOrigen.Latitud).replace(",","."));
       const Longitud1 = parseFloat((ciudadOrigen.longitud).replace(",","."));
@@ -150,7 +152,7 @@ boton.addEventListener('click', function() {
 
       console.log(`Distancia: ${distancia}`);
 
-      
+
  
   })
     }) 
