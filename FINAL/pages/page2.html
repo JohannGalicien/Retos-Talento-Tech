@@ -46,31 +46,35 @@
             
             <p> En este apartado podras simular un vuelo entre dos ciudades de Colombia, y posteriormente, poder ver la comparación del tiempo, gasto de combustible, y producción de CO.2 entre el Airbus A320 y los dirigibles de diesel e hidrogeno</p>
         </div>
-        <fieldset class="simulador">
-            <legend>Ciudad de Origen</legend>
-            <select name="state1" id="state1">
-                <option value="">DEPARTAMENTO</option>
-            </select>
-            
-            <select name="city1" id="city1">
-                <option value="">CIUDAD</option>
-            </select>
 
-            
-        </fieldset>
+        <div class="cities">
+            <fieldset class="simulador" id="fieldset1">
+                <legend>Ciudad de Origen</legend>
+                <select name="state1" id="state1">
+                    <option value="">DEPARTAMENTO</option>
+                </select>
+                
+                <select name="city1" id="city1">
+                    <option value="">CIUDAD</option>
+                </select>
+    
+                
+            </fieldset>
+    
+            <fieldset class="simulador" id="fieldset2">
+                <legend>Ciudad de Destino</legend>
+                <select name="state1" id="state2">
+                    <option value="">DEPARTAMENTO</option>
+                </select>
+                
+                <select name="city1" id="city2">
+                    <option value="">CIUDAD</option>
+                </select>
+    
+                
+            </fieldset>
 
-        <fieldset class="simulador">
-            <legend>Ciudad de Destino</legend>
-            <select name="state1" id="state2">
-                <option value="">DEPARTAMENTO</option>
-            </select>
-            
-            <select name="city1" id="city2">
-                <option value="">CIUDAD</option>
-            </select>
-
-            
-        </fieldset>
+        </div>
 
         <button id="boton">Simular</button>
 

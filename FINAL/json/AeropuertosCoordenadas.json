@@ -870,21 +870,6 @@
     "Information": "https://www.worlddata.info/america/colombia/airports.php"
   },
   {
-    "Código Departamento": 52,
-    "Nombre Departamento": "NARIÑO",
-    "Código Municipio": 52565,
-    "Nombre Municipio": "providencia",
-    "Tipo: Municipio / Isla / Área no municipalizada": "Municipio",
-    "longitud": "-77,596794",
-    "Latitud": "1,237814",
-    "IATA": "PVA",
-    "ICAO": "SKPV",
-    "Airport name": "El Embrujo Airport",
-    "Country": "Colombia",
-    "City": "providencia",
-    "Information": "https://www.worlddata.info/america/colombia/airports.php"
-  },
-  {
     "Código Departamento": 54,
     "Nombre Departamento": "NORTE DE SANTANDER",
     "Código Municipio": 54498,
@@ -1017,21 +1002,6 @@
     "Airport name": "Las Cruces Airport",
     "Country": "Colombia",
     "City": "sabana de torres",
-    "Information": "https://www.worlddata.info/america/colombia/airports.php"
-  },
-  {
-    "Código Departamento": 68,
-    "Nombre Departamento": "SANTANDER",
-    "Código Municipio": 68669,
-    "Nombre Municipio": "san andrés",
-    "Tipo: Municipio / Isla / Área no municipalizada": "Municipio",
-    "longitud": "-72,848864",
-    "Latitud": "6,811511",
-    "IATA": "ADZ",
-    "ICAO": "SKSP",
-    "Airport name": "Gustavo Rojas Pinilla International Airport",
-    "Country": "Colombia",
-    "City": "san andrés",
     "Information": "https://www.worlddata.info/america/colombia/airports.php"
   },
   {
@@ -1381,7 +1351,7 @@
   },
   {
     "Código Departamento": 88,
-    "Nombre Departamento": "ARCHIPIÉLAGO DE SAN ANDRÉS, PROVIDENCIA Y SANTA CATALINA",
+    "Nombre Departamento": "COLOMBIA INSULAR",
     "Código Municipio": 88001,
     "Nombre Municipio": "san andrés",
     "Tipo: Municipio / Isla / Área no municipalizada": "Isla",
@@ -1396,7 +1366,7 @@
   },
   {
     "Código Departamento": 88,
-    "Nombre Departamento": "ARCHIPIÉLAGO DE SAN ANDRÉS, PROVIDENCIA Y SANTA CATALINA",
+    "Nombre Departamento": "COLOMBIA INSULAR",
     "Código Municipio": 88564,
     "Nombre Municipio": "providencia",
     "Tipo: Municipio / Isla / Área no municipalizada": "Municipio",

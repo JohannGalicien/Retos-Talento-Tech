@@ -115,6 +115,9 @@ h2 {
     font-size: 1.5em;
     font-weight: 700;
     text-shadow: 1px 1px 1px gray;
+    gap: 40px;
+    
+    
 }
 
 .contenedor {
@@ -147,15 +150,57 @@ h2 {
 
 #result {
     grid-area: Distancia;
+    text-align: center;
+    font-size: 1.5em;
 }
 
+.cities {
+    max-width: 100%;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "select1 select2";
+    padding: 10px;
+
+}
+
+#fieldset1 {
+    grid-area: select1;
+
+}
+
+#fieldset2 {
+    grid-area: select2;
+}
 .simulador {
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
     border-radius: 10px;
+    border-color: green;
+    border-width: 2px;
+    margin-top: 20px;
 }
 
 .simulador legend {
     font-weight: bold;
+}
+
+.simulador select {
+    border-radius: 5px;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 100%;
+    
+
+}
+
+#boton {
+    font-size: 1.5em;
+    margin: 15px;
+    margin-left: 25px;
+    border-radius: 5px;
 }
