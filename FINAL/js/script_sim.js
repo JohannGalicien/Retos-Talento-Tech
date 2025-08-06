@@ -170,8 +170,70 @@ boton.addEventListener('click', function() {
       informeDestino.innerHTML = `Destino:<br>${aeropuertoDestino}`;
       informe.textContent = `Distancia: ${Math.floor(distancia)}km`;
 
-
+      fetch('../json/Datos.json')
+  .then(response => response.json())
+  .then(especificaciones => {
+    console.log(especificaciones);
       
+    
+
+    const airbusA320 = especificaciones.find(c => c.vehiculo === 'A320');
+    let velocidadAirbus;
+    const velocidadesA320 = airbusA320.velocidad
+    console.log(velocidadesA320)
+
+
+      if (distancia < 300) {
+        velocidadAirbus = velocidadesA320[0];
+        console.log(velocidadAirbus);
+      }
+      else {
+        velocidadAirbus = velocidadesA320[1];
+        console.log(velocidadAirbus);
+      }
+    console.log(`Velocidad Airbus ${velocidadAirbus}`);
+
+    const hindenburg = especificaciones.find(c => c.vehiculo === 'Hindenburg');
+    const wolke0 = especificaciones.find(c => c.vehiculo === 'Wolke 0');
+
+
+    const tiempo = {
+      'A320' : distancia / velocidadAirbus ,
+      'Hindenburg' : distancia / hindenburg.velocidad ,
+      'Wolke 0' : distancia / wolke0.velocidad ,
+
+
+    }
+
+    console.log(tiempo)
+
+    const derroche = {
+      'A320' : tiempo.A320 * airbusA320.consumo ,
+      'Hindenburg' : tiempo.Hindenburg * hindenburg.consumo ,
+      'Wolke 0' : tiempo['Wolke 0'] * wolke0.consumo
+
+    }
+
+    console.log(derroche)
+
+    const co2 = {
+      'A320' : derroche.A320 * airbusA320['co.2'] ,
+      'Hindenburg' : derroche.Hindenburg * hindenburg['co.2'] ,
+      'Wolke 0' : derroche['Wolke 0'] * wolke0['co.2']
+    }
+
+    console.log(co2)
+
+    const derrochePerCapita = {
+      'A320' : co2.A320 / airbusA320.capacidad ,
+      'Hindenburg' : co2.Hindenburg / hindenburg.capacidad ,
+      'Wolke 0' : co2['Wolke 0'] / wolke0.capacidad
+
+    }
+    
+    console.log(derrochePerCapita)
+    
+  })     
  
   });
   

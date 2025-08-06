@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
     padding: 0;
     margin: 0;
 }
@@ -52,8 +52,12 @@ body {
 .divbar:hover {
     box-shadow: 0px 2px 0px 0px white;
 
+
 }
 
+.divbar:hover a {
+    color: lightgray;
+}
 .divbar {
     padding: 10px;
 }
@@ -86,6 +90,7 @@ body {
     width: 70%;
     margin: auto;
     background-color: lightgray;
+    padding: 10px;
 }
 
 h2 {
@@ -97,4 +102,60 @@ h2 {
     width: 100%;
     bottom: 0;
     background-color: lightgreen;
+}
+
+.result_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "Origen Destino"
+                        "Distancia Distancia";
+    
+    margin: 20px;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-shadow: 1px 1px 1px gray;
+}
+
+.contenedor {
+    margin: 20px;
+
+}
+
+.contenedor h2 {
+    font-weight: 1000;
+    font-size: 2em;
+    text-shadow: 2px 2px 2px grey;
+}
+
+.contenedor p {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.content {
+    box-shadow: 3px 0px 3px 0px gray;
+}
+
+#resultOrigin {
+    grid-area: Origen;
+}
+
+#resultDestination {
+    grid-area: Destino;
+}
+
+#result {
+    grid-area: Distancia;
+}
+
+.simulador {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.simulador legend {
+    font-weight: bold;
 }

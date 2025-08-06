@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <title>Simulador</title>
 </head>
 <body>
     <header class="header">
@@ -41,8 +41,11 @@
 
 
     <main class="content">
-        <h2>Sample H2</h2>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur itaque dolorum corporis voluptatum qui accusantium, esse temporibus eum, fugiat repudiandae obcaecati voluptatem illum? Voluptatem facilis qui non placeat ad cum.</p>
+        <div class="contenedor">
+            <h2>Simulador</h2>
+            
+            <p> En este apartado podras simular un vuelo entre dos ciudades de Colombia, y posteriormente, poder ver la comparación del tiempo, gasto de combustible, y producción de CO.2 entre el Airbus A320 y los dirigibles de diesel e hidrogeno</p>
+        </div>
         <fieldset class="simulador">
             <legend>Ciudad de Origen</legend>
             <select name="state1" id="state1">
@@ -73,9 +76,9 @@
 
         <div class="result_container">
             
-            <p id="resultOrigin"></p>
-            <p id="resultDestination"></p>
-            <p id="result"></p>
+            <p class="resulado" id="resultOrigin"></p>
+            <p class="resulado" id="resultDestination"></p>
+            <p class="resulado" id="result"></p>
 
         </div>
 
