@@ -105,11 +105,52 @@ fetch('../json/AeropuertosCoordenadas.json')
 
 
 boton.addEventListener('click', function() {
-        const city1 = document.getElementById('city1')
-        const ciudadOrigen = city1.value
-        const city2 = document.getElementById('city2')
-        const ciudadDestino = city2.value
+  
+  fetch('../json/AeropuertosCoordenadas.json')
+  .then(response => response.json())
+  .then(aeropuertos => {
+    console.log(aeropuertos);
     
-        console.log(`Desde ${ciudadOrigen}`)
-        console.log(`Hasta ${ciudadDestino}`)
+    const city1 = document.getElementById('city1');
+    
+    const city2 = document.getElementById('city2');
+    
+  
+    console.log(`Desde ${city1.value}`);
+    console.log(`Hasta ${city2.value}`);
+
+      const ciudadOrigen = aeropuertos.find(c => c.City === city1.value);
+      const ciudadDestino = aeropuertos.find(c => c.City === city2.value);
+
+      console.log(ciudadOrigen)
+      console.log(ciudadDestino)
+
+      const Latitud1 = parseFloat((ciudadOrigen.Latitud).replace(",","."));
+      const Longitud1 = parseFloat((ciudadOrigen.longitud).replace(",","."));
+      const Latitud2 = parseFloat((ciudadDestino.Latitud).replace(",","."));
+      const Longitud2 = parseFloat((ciudadDestino.longitud).replace(",","."));
+
+      console.log(Latitud1)
+      //Fórmula harvesine
+
+      const R = 6371; //radio de la tierra en kilometros
+      const rad = Math.PI / 180;
+
+      //Diferencias de latitud y longitud
+      const dLat = (Latitud2 - Latitud1) * rad;
+      const dLon = (Longitud2 - Longitud1) * rad;
+
+      const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(Latitud1 * rad) * Math.cos(Latitud2 * rad) *
+      Math.sin(dLon / 2) ** 2;
+
+      const c = 2 * Math.asin(Math.sqrt(a));
+      const distancia = R * c;
+
+      console.log(`Distancia: ${distancia}`);
+
+      
+ 
+  })
     }) 
