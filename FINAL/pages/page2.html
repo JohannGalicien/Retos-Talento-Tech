@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Simulador</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>Ecovolantis - Simulador</title>
 </head>
 <body>
     <header class="header">
@@ -86,22 +89,30 @@
 
         </div>
 
-        <h2 class="graficoLabel" id="graficoTiempo"></h2>
-        <canvas id="graficoTiempo"></canvas>
+        <div id="allGraficos">
+            <div id="map"></div>
+    
+            <h2 class="graficoLabel" id="labelgraficoTiempo"></h2>
+            <canvas id="graficoTiempo"></canvas>
+    
+            <h2 class="graficoLabel" id="labelgraficoCombustible"></h2>
+            <canvas id="graficoCombustible"></canvas>
+    
+            <h2 class="graficoLabel" id="labelgraficoGEI"></h2>
+            <canvas id="graficoGEI"></canvas>
+    
+            <script src="../js/script_sim.js"></script>
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-        <h2 class="graficoLabel" id="graficoCombustible"></h2>
-        <canvas id="graficoCombustible"></canvas>
-
-        <h2 class="graficoLabel" id="graficoGEI"></h2>
-        <canvas id="graficoGEI"></canvas>
-
-        <script src="../js/script_sim.js"></script>
-       
+        </div>
+        
 
     </main>
 
     <footer class="footer">
-        <p class="textfooter">Sample Text</p>
+        <h1>¿Quieres ser promotor de este proyecto?</h1>
+        <a href="mailto:Eco@Volantis.org">Contactanos ✉</a>
+        <img src="../img/Icon.png" alt="404">
     </footer>
 
 </body>

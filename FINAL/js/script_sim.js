@@ -109,6 +109,7 @@ fetch('../json/AeropuertosCoordenadas.json')
 
 boton.addEventListener('click', function() {
   
+  document.getElementById("allGraficos").innerHTML = '<div id="map"></div><h2 class="graficoLabel" id="labelgraficoTiempo"></h2><canvas id="graficoTiempo"></canvas><h2 class="graficoLabel" id="labelgraficoCombustible"></h2><canvas id="graficoCombustible"></canvas><h2 class="graficoLabel" id="labelgraficoGEI"></h2><canvas id="graficoGEI"></canvas>';
   
   fetch('../json/AeropuertosCoordenadas.json')
   .then(response => response.json())
@@ -233,6 +234,142 @@ boton.addEventListener('click', function() {
     
     console.log(derrochePerCapita)
     
+   
+
+    const mapa = document.getElementById('map')
+    mapa.style.cssText = "height: 500px"
+    const map = L.map('map').setView([4.5709, -74.2973], 5);
+
+
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+  
+  const origen = [Latitud1, Longitud1]; 
+  const destino = [Latitud2, Longitud2]; 
+
+  // Dibujar línea
+  L.polyline([origen, destino], { color: 'green' }).addTo(map);
+
+       new Chart(document.getElementById('graficoTiempo'), {
+      type: 'bar',
+      data: {
+        labels: Object.keys(tiempo),
+        datasets: [{
+          label: 'Tiempo de vuelo (horas)',
+          data: Object.values(tiempo),
+          backgroundColor: 'rgba(166, 228, 132, 0.6)',
+          borderColor: 'rgba(6, 246, 26, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              stepSize: 1 
+            }
+          }
+        }
+      }
+    });
+
+    new Chart(document.getElementById('graficoCombustible'), {
+      type: 'bar',
+      data: {
+        labels: Object.keys(derroche),
+        datasets: [{
+          label: 'Consumo de combustible (litros)',
+          data: Object.values(derroche),
+          backgroundColor: 'rgba(4, 243, 16, 0.4)',
+          borderColor: 'rgba(86, 255, 142, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+            
+          }
+        }
+      }
+    });
+
+    const etiquetaTiempo = document.getElementById('labelgraficoTiempo')
+    const etiquetaCombustible = document.getElementById('labelgraficoCombustible')
+    const etiquetaGEI = document.getElementById('labelgraficoGEI')
+
+    etiquetaTiempo.textContent = 'Comparación de Tiempo'
+    etiquetaCombustible.textContent = 'Comparación en Gasto de Combustible'
+    etiquetaGEI.textContent = 'Comparación por CO₂ producido'
+
+    
+    new Chart(document.getElementById('graficoGEI'), {
+      data: {
+      labels: Object.keys(co2),
+      datasets: [
+        {
+        type: 'line',
+        label: 'CO₂ por pasajero (kg)',
+        data: Object.values(derrochePerCapita),
+        borderColor: 'rgba(162, 212, 137, 1)',
+        backgroundColor: 'rgba(55, 74, 45, 1)',
+        borderWidth: 2,
+        tension: 0.3,
+        yAxisID: 'y1'
+      },
+        {
+        type: 'bar',
+        label: 'Emisiones de CO₂ (kg)',
+        data: Object.values(co2),
+        backgroundColor: 'rgba(182, 241, 190, 0.6)',
+        borderColor: 'rgba(99, 185, 105, 1)',
+        borderWidth: 1,
+        yAxisID: 'y'
+      }
+      
+    ]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      y: {
+        beginAtZero: true,
+        position: 'left',
+        title: {
+          display: true,
+          text: 'CO₂ total (kg)'
+        }
+      },
+      y1: {
+        beginAtZero: true,
+        position: 'right',
+        title: {
+          display: true,
+          text: 'CO₂ per cápita (kg)'
+        },
+        grid: {
+          drawOnChartArea: false
+        }
+      }
+    }
+  }
+});
+
+    
+    
+      
+ 
+ 
+  
+    
+
+
+
   })     
  
   });
